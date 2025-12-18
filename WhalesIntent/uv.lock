@@ -2142,6 +2142,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "imbalanced-learn" },
+    { name = "ipykernel" },
     { name = "jupyter" },
     { name = "matplotlib" },
     { name = "numpy" },
@@ -2156,6 +2157,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "imbalanced-learn", specifier = ">=0.14.0" },
+    { name = "ipykernel", specifier = ">=7.1.0" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "matplotlib", specifier = ">=3.10.8" },
     { name = "numpy", specifier = ">=2.3.5" },
