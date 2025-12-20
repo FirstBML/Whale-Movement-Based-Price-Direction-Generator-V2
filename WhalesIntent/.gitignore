@@ -1,5 +1,19 @@
 # Environment variables
+# Environment files
 .env
+.env.*
+!.env.example
+.env.local
+.env.development
+.env.production
+.env.staging
+
+# API keys and secrets
+*.key
+*.pem
+*.cert
+credentials.json
+secrets.json
 
 # Virtual environments
 .venv/
