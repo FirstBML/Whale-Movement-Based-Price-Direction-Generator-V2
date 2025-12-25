@@ -1,0 +1,10 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": [],
+    
+    // ADD JUST THESE 2 CRITICAL LINES:
+    "python.defaultInterpreterPath": "${workspaceFolder}/WhalesIntent/.venv/bin/python",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/WhalesIntent/.venv/lib/python3.12/site-packages"
+    ]
+}
