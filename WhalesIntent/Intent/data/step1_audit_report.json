@@ -1,0 +1,26 @@
+{
+  "target_col": "direction_t2",
+  "audit_results": {
+    "global_balance": {
+      "up_pct": 51.39442231075697,
+      "down_pct": 48.60557768924303,
+      "status": "\u2705 EXCELLENT"
+    },
+    "fold_balance": {
+      "issues": [],
+      "n_folds": 5
+    },
+    "baseline": 0.5139442231075697,
+    "noise": {
+      "pct_small_moves": 6.47410358565737,
+      "threshold": 0.002
+    },
+    "stability": {
+      "t1_t2": 0.801094890510949,
+      "t1_t3": 0.7271897810218978,
+      "t2_t3": 0.8494525547445255
+    }
+  },
+  "warnings": [],
+  "proceed": true
+}
