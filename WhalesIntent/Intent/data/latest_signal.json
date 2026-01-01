@@ -1,0 +1,15 @@
+{
+  "date": "2025-12-31",
+  "regime": "R0",
+  "direction": null,
+  "score": 2,
+  "confidence": 0.814,
+  "expected_horizon": "T+2",
+  "action": "WATCH",
+  "reasons": [
+    "net_flow_negative",
+    "btc_down"
+  ],
+  "model_threshold": 0.55,
+  "position_size": 0.0
+}
