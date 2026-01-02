@@ -1,15 +1,15 @@
 {
-  "date": "2025-12-31",
+  "date": "2026-01-01",
   "regime": "R0",
   "direction": null,
-  "score": 2,
-  "confidence": 0.814,
-  "expected_horizon": "T+2",
-  "action": "WATCH",
+  "model_probability": 0.012760016766322007,
+  "structural_score": 0,
+  "flow_score": 0,
+  "context_score": 1,
+  "adjusted_confidence": 0.012760016766322007,
+  "position_size": 0.0,
   "reasons": [
-    "net_flow_negative",
-    "btc_down"
+    "no_structural_break"
   ],
-  "model_threshold": 0.55,
-  "position_size": 0.0
+  "action": "NO_TRADE"
 }

@@ -1,0 +1,4 @@
+date,regime,direction,model_probability,structural_score,flow_score,context_score,total_score,adjusted_confidence,action,position_size,signal_quality,veto_reasons,eth_price,btc_ret_lag1
+2025-11-11,R5,,0.0149,2,0,-2,0,0.0149,NO_TRADE,0.0,D,"vol_expansion,btc_strength",3529.39482776489,0.0293949495587906
+2025-11-15,R3,,0.1244,4,1,0,5,0.2641,NO_TRADE,0.0,D,"btc_breakdown,vol_expansion,price_weakness",3168.772535417267,-0.0477452466527189
+2025-12-04,R5,,0.0392,2,0,-2,0,0.0392,NO_TRADE,0.0,D,"vol_expansion,btc_strength",3177.1969787525845,0.047573753531426
