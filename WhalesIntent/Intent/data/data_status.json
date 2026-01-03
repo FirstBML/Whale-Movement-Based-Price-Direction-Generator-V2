@@ -1,0 +1,52 @@
+{
+  "last_updated": "2026-01-03T15:37:51.262520",
+  "fetch_mode": "incremental",
+  "whale_data_rows": 3001,
+  "market_data_rows": 3001,
+  "btc_price_rows": 4631,
+  "eth_price_rows": 3801,
+  "historical_ranges": {
+    "btc": {
+      "start": "2013-04-28T00:00:00+00:00",
+      "end": "2026-01-02T00:00:00+00:00",
+      "target_start": "01-01-2013"
+    },
+    "eth": {
+      "start": "2015-08-07T00:00:00+00:00",
+      "end": "2026-01-02T00:00:00+00:00",
+      "target_start": "01-08-2015"
+    }
+  },
+  "key_rotation_stats": {
+    "total_keys": 6,
+    "total_requests": 0,
+    "active_keys": 5,
+    "key_details": {
+      "7ND5DKw8": {
+        "count": 0,
+        "last_used": null,
+        "errors": 2
+      },
+      "D1Smlg20": {
+        "count": 0,
+        "last_used": null,
+        "errors": 1
+      },
+      "fHg07khx": {
+        "count": 0,
+        "last_used": null,
+        "errors": 1
+      },
+      "hueVX9VB": {
+        "count": 0,
+        "last_used": null,
+        "errors": 1
+      },
+      "p2UxSBFJ": {
+        "count": 0,
+        "last_used": null,
+        "errors": 1
+      }
+    }
+  }
+}

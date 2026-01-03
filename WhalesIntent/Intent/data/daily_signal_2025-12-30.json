@@ -1,9 +1,0 @@
-{
-  "date": "2025-12-30",
-  "regime": "R0",
-  "action": "NO_TRADE",
-  "position_size": 0.0,
-  "veto_reasons": [
-    "invalid_regime"
-  ]
-}
