@@ -1,15 +1,15 @@
 {
-  "date": "2026-01-01",
+  "date": "2026-01-02",
   "regime": "R0",
   "direction": null,
-  "model_probability": 0.012760016766322007,
+  "model_probability": 0.755125721389241,
   "structural_score": 0,
   "flow_score": 0,
-  "context_score": 1,
-  "adjusted_confidence": 0.012760016766322007,
+  "context_score": 0,
+  "adjusted_confidence": 0.755125721389241,
   "position_size": 0.0,
   "reasons": [
-    "no_structural_break"
+    "price_too_low"
   ],
   "action": "NO_TRADE"
 }
