@@ -1,0 +1,12 @@
+{
+  "date": "2026-01-02",
+  "regime": "R0",
+  "direction": null,
+  "model_probability": 0.0,
+  "adjusted_confidence": 0.0,
+  "position_size": 0.0,
+  "reasons": [
+    "neutral_regime"
+  ],
+  "action": "NO_TRADE"
+}
