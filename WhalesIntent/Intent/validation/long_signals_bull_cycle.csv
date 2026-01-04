@@ -13,7 +13,7 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2020-02-04,R2,LONG,0.6912853473192222,0.0,0.0,['price_near_highs'],NO_TRADE
 2020-02-08,R1,LONG,0.25641406426388264,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-02-10,R1,LONG,0.4871457943081348,0.0,0.0,['price_near_highs'],NO_TRADE
-2020-02-11,R1,LONG,0.5142466951122405,0.0,0.0,['weak_price_confirmation'],NO_TRADE
+2020-02-11,R1,LONG,0.5142466951122405,0.0,0.0,['price_near_highs'],NO_TRADE
 2020-02-13,R1,LONG,0.6248353376138573,0.0,0.0,['price_near_highs'],NO_TRADE
 2020-02-14,R1,LONG,0.1605644770724928,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-03-07,R2,LONG,0.11116777002376124,0.0,0.0,['low_model_probability'],NO_TRADE
@@ -90,7 +90,7 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2020-11-09,R1,LONG,0.14677505000405133,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-11-11,R1,LONG,0.11037353011062305,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-11-15,R2,LONG,0.29028846989197354,0.0,0.0,['low_model_probability'],NO_TRADE
-2020-11-16,R2,LONG,0.5083679629928909,0.0,0.0,['weak_price_confirmation'],NO_TRADE
+2020-11-16,R2,LONG,0.5083679629928909,0.0,0.0,['weak_price_confirmation (1/2)'],NO_TRADE
 2020-11-17,R2,LONG,0.160241159658676,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-11-21,R1,LONG,0.39195146014842963,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-11-23,R1,LONG,0.2453480552122988,0.0,0.0,['low_model_probability'],NO_TRADE
@@ -104,7 +104,7 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2020-12-21,R1,LONG,0.13558702796934222,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-12-22,R1,LONG,0.1433729539092982,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-12-23,R1,LONG,0.13628251714747286,0.0,0.0,['low_model_probability'],NO_TRADE
-2020-12-24,R1,LONG,0.5292949853083149,0.0,0.0,['weak_price_confirmation'],NO_TRADE
+2020-12-24,R1,LONG,0.5292949853083149,0.0,0.0,['price_near_highs'],NO_TRADE
 2020-12-26,R1,LONG,0.26727381460998245,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-12-27,R1,LONG,0.3524963269266694,0.0,0.0,['low_model_probability'],NO_TRADE
 2020-12-28,R1,LONG,0.13026447680731293,0.0,0.0,['low_model_probability'],NO_TRADE
@@ -112,14 +112,14 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2020-12-31,R1,LONG,0.1891094730887607,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-01-01,R1,LONG,0.5228630075499671,0.0,0.0,['price_near_highs'],NO_TRADE
 2021-01-02,R1,LONG,0.35605359035382156,0.0,0.0,['low_model_probability'],NO_TRADE
-2021-01-03,R1,LONG,0.7418290981397958,0.0,0.0,['weak_price_confirmation'],NO_TRADE
+2021-01-03,R1,LONG,0.7418290981397958,0.0,0.0,['price_near_highs'],NO_TRADE
 2021-01-04,R1,LONG,0.5791751051871129,0.0,0.0,['price_near_highs'],NO_TRADE
 2021-01-05,R1,LONG,0.3395292796507131,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-01-09,R1,LONG,0.15593695940104574,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-01-10,R1,LONG,0.3091130743650835,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-01-11,R1,LONG,0.1694488847537332,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-01-12,R1,LONG,0.28637207345271537,0.0,0.0,['low_model_probability'],NO_TRADE
-2021-01-13,R1,LONG,0.5049542454385209,0.0,0.0,['weak_price_confirmation'],NO_TRADE
+2021-01-13,R1,LONG,0.5049542454385209,0.5049542454385209,0.25,"['ml_accumulation', 'price_confirmation']",ENTER
 2021-01-19,R1,LONG,0.24475876209639083,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-01-30,R1,LONG,0.12475484688148498,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-02-03,R1,LONG,0.5217341573220672,0.0,0.0,['price_near_highs'],NO_TRADE
@@ -134,7 +134,7 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2021-02-13,R1,LONG,0.26862415231510206,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-02-14,R1,LONG,0.3199682982718243,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-02-15,R2,LONG,0.26778559553896575,0.0,0.0,['low_model_probability'],NO_TRADE
-2021-02-16,R2,LONG,0.545251300501363,0.0,0.0,['weak_price_confirmation'],NO_TRADE
+2021-02-16,R2,LONG,0.545251300501363,0.0,0.0,['weak_price_confirmation (1/2)'],NO_TRADE
 2021-02-17,R2,LONG,0.5900438549255769,0.0,0.0,['price_near_highs'],NO_TRADE
 2021-02-18,R2,LONG,0.20553414461655126,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-02-19,R2,LONG,0.16491144781567763,0.0,0.0,['low_model_probability'],NO_TRADE
@@ -191,13 +191,13 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2021-10-02,R1,LONG,0.0878196352104694,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-10-03,R1,LONG,0.08854130512339514,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-10-04,R1,LONG,0.31699143972748456,0.0,0.0,['low_model_probability'],NO_TRADE
-2021-10-05,R1,LONG,0.556582857175244,0.0,0.0,['weak_price_confirmation'],NO_TRADE
+2021-10-05,R1,LONG,0.556582857175244,0.0,0.0,['price_near_highs'],NO_TRADE
 2021-10-06,R2,LONG,0.13273836307096049,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-10-09,R2,LONG,0.23104180672989152,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-10-10,R2,LONG,0.16361793897579915,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-10-11,R2,LONG,0.20394150090642937,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-10-12,R2,LONG,0.36904288351399567,0.0,0.0,['low_model_probability'],NO_TRADE
-2021-10-13,R2,LONG,0.6748413831078428,0.0,0.0,['weak_price_confirmation'],NO_TRADE
+2021-10-13,R2,LONG,0.6748413831078428,0.0,0.0,['weak_price_confirmation (1/2)'],NO_TRADE
 2021-10-15,R2,LONG,0.12366857464133103,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-10-16,R2,LONG,0.09643246488073683,0.0,0.0,['low_model_probability'],NO_TRADE
 2021-10-17,R2,LONG,0.12476399593580016,0.0,0.0,['low_model_probability'],NO_TRADE
