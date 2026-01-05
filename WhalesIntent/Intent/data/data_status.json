@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-01-05T09:49:26.391782",
+  "last_updated": "2026-01-05T17:57:09.791265",
   "fetch_mode": "incremental",
-  "whale_data_rows": 3003,
+  "whale_data_rows": 3002,
   "market_data_rows": 3003,
   "btc_price_rows": 4633,
   "eth_price_rows": 3803,
@@ -24,27 +24,27 @@
     "key_details": {
       "D1Smlg20": {
         "count": 1,
-        "last_used": "2026-01-05T09:48:49.664284",
+        "last_used": "2026-01-05T17:56:16.216286",
         "errors": 2
       },
       "fHg07khx": {
         "count": 1,
-        "last_used": "2026-01-05T09:48:51.851822",
+        "last_used": "2026-01-05T17:56:20.628538",
         "errors": 2
       },
       "hueVX9VB": {
         "count": 1,
-        "last_used": "2026-01-05T09:48:54.170485",
+        "last_used": "2026-01-05T17:56:23.005191",
         "errors": 2
       },
       "7ND5DKw8": {
         "count": 2,
-        "last_used": "2026-01-05T09:49:02.127777",
+        "last_used": "2026-01-05T17:56:31.031887",
         "errors": 0
       },
       "p2UxSBFJ": {
         "count": 2,
-        "last_used": "2026-01-05T09:49:02.457064",
+        "last_used": "2026-01-05T17:56:31.321932",
         "errors": 0
       }
     }
