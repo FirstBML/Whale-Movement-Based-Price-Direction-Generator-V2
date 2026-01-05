@@ -1,51 +1,51 @@
 {
-  "last_updated": "2026-01-03T15:37:51.262520",
+  "last_updated": "2026-01-05T09:49:26.391782",
   "fetch_mode": "incremental",
-  "whale_data_rows": 3001,
-  "market_data_rows": 3001,
-  "btc_price_rows": 4631,
-  "eth_price_rows": 3801,
+  "whale_data_rows": 3003,
+  "market_data_rows": 3003,
+  "btc_price_rows": 4633,
+  "eth_price_rows": 3803,
   "historical_ranges": {
     "btc": {
       "start": "2013-04-28T00:00:00+00:00",
-      "end": "2026-01-02T00:00:00+00:00",
+      "end": "2026-01-04T00:00:00+00:00",
       "target_start": "01-01-2013"
     },
     "eth": {
       "start": "2015-08-07T00:00:00+00:00",
-      "end": "2026-01-02T00:00:00+00:00",
+      "end": "2026-01-04T00:00:00+00:00",
       "target_start": "01-08-2015"
     }
   },
   "key_rotation_stats": {
-    "total_keys": 6,
-    "total_requests": 0,
+    "total_keys": 5,
+    "total_requests": 7,
     "active_keys": 5,
     "key_details": {
-      "7ND5DKw8": {
-        "count": 0,
-        "last_used": null,
+      "D1Smlg20": {
+        "count": 1,
+        "last_used": "2026-01-05T09:48:49.664284",
         "errors": 2
       },
-      "D1Smlg20": {
-        "count": 0,
-        "last_used": null,
-        "errors": 1
-      },
       "fHg07khx": {
-        "count": 0,
-        "last_used": null,
-        "errors": 1
+        "count": 1,
+        "last_used": "2026-01-05T09:48:51.851822",
+        "errors": 2
       },
       "hueVX9VB": {
-        "count": 0,
-        "last_used": null,
-        "errors": 1
+        "count": 1,
+        "last_used": "2026-01-05T09:48:54.170485",
+        "errors": 2
+      },
+      "7ND5DKw8": {
+        "count": 2,
+        "last_used": "2026-01-05T09:49:02.127777",
+        "errors": 0
       },
       "p2UxSBFJ": {
-        "count": 0,
-        "last_used": null,
-        "errors": 1
+        "count": 2,
+        "last_used": "2026-01-05T09:49:02.457064",
+        "errors": 0
       }
     }
   }
