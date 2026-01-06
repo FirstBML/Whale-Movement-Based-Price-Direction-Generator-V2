@@ -1,6 +1,4 @@
 date,regime,direction,model_probability,adjusted_confidence,position_size,reasons,action
-2025-11-04,R5,SHORT,0.9596869970903575,0.85,1.0,"['btc_breakdown', 'low_volatility']",ENTER
-2025-11-05,R3,LONG,0.1095453680507816,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-11-06,R3,LONG,0.14277155497105962,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-11-07,R3,LONG,0.07938440165138001,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-11-08,R5,SHORT,0.9641712441324346,0.0,0.0,"['no_flow_confirmation', 'no_structural_break']",NO_TRADE
@@ -59,3 +57,5 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2025-12-31,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2026-01-01,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2026-01-02,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
+2026-01-03,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
+2026-01-04,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
