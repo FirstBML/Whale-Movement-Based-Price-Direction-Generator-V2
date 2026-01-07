@@ -1,16 +1,14 @@
 date,regime,direction,model_probability,adjusted_confidence,position_size,reasons,action
-2025-11-06,R3,LONG,0.12374597031375648,0.0,0.0,['low_model_probability'],NO_TRADE
-2025-11-07,R3,LONG,0.09124083631308395,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-11-08,R5,SHORT,0.9569461972356199,0.0,0.0,"['no_flow_confirmation', 'no_structural_break']",NO_TRADE
-2025-11-09,R3,LONG,0.13474926513871988,0.0,0.0,['low_model_probability'],NO_TRADE
-2025-11-10,R3,LONG,0.23137197368399742,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-11-09,R3,LONG,0.12937026444029198,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-11-10,R3,LONG,0.2913987351500981,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-11-11,R5,SHORT,0.09489784335010595,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-11-12,R5,SHORT,0.9581791134568672,0.0,0.0,"['no_flow_confirmation', 'no_structural_break']",NO_TRADE
 2025-11-13,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-11-14,R5,SHORT,0.9664750167585358,0.0,0.0,"['no_flow_confirmation', 'no_structural_break']",NO_TRADE
-2025-11-15,R3,LONG,0.18939987295693445,0.0,0.0,['low_model_probability'],NO_TRADE
-2025-11-16,R3,LONG,0.27209410068817463,0.0,0.0,['low_model_probability'],NO_TRADE
-2025-11-17,R3,LONG,0.21600823771803238,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-11-15,R3,LONG,0.14727745211695337,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-11-16,R3,LONG,0.17617826970846667,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-11-17,R3,LONG,0.20680018600078404,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-11-18,R4,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-11-19,R5,SHORT,0.9797776857454659,0.85,1.0,['btc_breakdown'],ENTER
 2025-11-20,R5,SHORT,0.9602857591001185,0.0,0.0,"['no_flow_confirmation', 'no_structural_break']",NO_TRADE
@@ -19,12 +17,12 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2025-11-23,R4,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-11-24,R5,SHORT,0.16613035518742203,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-11-25,R5,SHORT,0.11668539951099138,0.0,0.0,['low_model_probability'],NO_TRADE
-2025-11-26,R3,LONG,0.23791715282585657,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-11-26,R3,LONG,0.1923634963158311,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-11-27,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-11-28,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-11-29,R5,SHORT,0.019599024068018583,0.0,0.0,['low_model_probability'],NO_TRADE
-2025-11-30,R2,LONG,0.12937307838803902,0.0,0.0,['low_model_probability'],NO_TRADE
-2025-12-01,R2,LONG,0.24263754110588467,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-11-30,R2,LONG,0.11493924211274989,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-12-01,R2,LONG,0.16351157272131128,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-12-02,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-12-03,R5,SHORT,0.14022673640389402,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-12-04,R5,SHORT,0.0191094011654519,0.0,0.0,['low_model_probability'],NO_TRADE
@@ -32,7 +30,7 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2025-12-06,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-12-07,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-12-08,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
-2025-12-09,R1,LONG,0.07138884743423413,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-12-09,R1,LONG,0.11175969728094179,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-12-10,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-12-11,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-12-12,R5,SHORT,0.9692861554916462,0.85,1.0,['btc_breakdown'],ENTER
@@ -40,7 +38,7 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2025-12-14,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-12-15,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2025-12-16,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
-2025-12-17,R3,LONG,0.07513773528249407,0.0,0.0,['low_model_probability'],NO_TRADE
+2025-12-17,R3,LONG,0.07271611618457002,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-12-18,R5,SHORT,0.015311462065396924,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-12-19,R5,SHORT,0.14478215939000194,0.0,0.0,['low_model_probability'],NO_TRADE
 2025-12-20,R4,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
@@ -59,3 +57,5 @@ date,regime,direction,model_probability,adjusted_confidence,position_size,reason
 2026-01-02,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2026-01-03,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
 2026-01-04,R0,,0.0,0.0,0.0,['neutral_regime'],NO_TRADE
+2026-01-05,R2,LONG,0.11921741639591656,0.0,0.0,['low_model_probability'],NO_TRADE
+2026-01-06,R2,LONG,0.10677316719618873,0.0,0.0,['low_model_probability'],NO_TRADE
