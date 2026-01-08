@@ -1,0 +1,2 @@
+entry_date,exit_date,direction,regime,entry_price,exit_price,confidence,position_size,mae_pct,mfe_pct,final_return_pct,days_held,funding_rate,funding_available,reasons
+2025-06-15,2025-06-25,SHORT,R5,2208.7856136457976,3750.427779092882,0.75,1.0,-69.79591663051745,4.128327825533225,-69.79591663051745,10,0.0001,True,test_reason

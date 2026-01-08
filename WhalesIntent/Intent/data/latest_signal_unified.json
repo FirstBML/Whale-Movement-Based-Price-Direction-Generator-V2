@@ -8,5 +8,7 @@
   "reasons": [
     "low_model_probability"
   ],
+  "funding_available": true,
+  "funding_rate": 4.659e-05,
   "action": "NO_TRADE"
 }
