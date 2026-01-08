@@ -84,6 +84,22 @@ class ShadowAnalysis:
             print("No trades recorded")
             return
         
+        # Handle column name variations
+        final_col = None
+        for col in ['final_pct', 'final_return_pct', 'final_return']:
+            if col in df_trades.columns:
+                final_col = col
+                break
+        
+        if final_col is None:
+            print("⚠️  Could not find final return column")
+            return
+        
+        # Rename for consistency
+        df_trades = df_trades.copy()
+        df_trades['final_pct'] = df_trades[final_col]
+        
+               
         # Basic stats
         print(f"Total trades: {len(df_trades)}")
         print(f"LONG trades: {(df_trades['direction'] == 'LONG').sum()}")
