@@ -1,0 +1,14 @@
+{
+  "date": "2026-01-06",
+  "direction": "LONG",
+  "regime": "R2",
+  "confidence": 0.0,
+  "model_probability": 0.10677316719618873,
+  "tier": "REJECTED",
+  "model_type": "trend",
+  "reasons": [
+    "low_model_probability"
+  ],
+  "position_size": null,
+  "quality_check": null
+}
