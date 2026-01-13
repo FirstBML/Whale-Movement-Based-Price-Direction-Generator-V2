@@ -1,0 +1,32 @@
+LONG SIGNAL MANUAL REVIEW TEMPLATE
+
+Date: __________
+Reviewer: __________
+
+FOR EACH LONG SIGNAL:
+
+1. REASONS MAKE SENSE? (Y/N/Partial)
+   - Comments: ________________________________
+
+2. IS IT RARE? (Signal frequency < 15% of days)
+   - Signal count: ___
+   - Days in period: ___
+   - Frequency: ___%
+   - Rating: Rare/Moderate/Frequent
+
+3. NEAR CONTINUATION, NOT TOPS?
+   - Price near highs: Yes/No
+   - Rating: Good continuation/Potential top/Mixed
+
+4. MAE SURVIVABLE?
+   - Approx MAE: ___%
+   - 3x leverage liquidates at -33.33%
+   - Rating: Safe/Caution/Dangerous
+
+OVERALL ASSESSMENT:
+- Signal quality: Good/Needs improvement/Bad
+- Action needed: 
+  [ ] No action needed
+  [ ] Review features
+  [ ] Consider R6 for mean reversion
+- Comments: ________________________________

@@ -1,0 +1,19 @@
+{
+  "date": "2026-01-06 00:00:00+00:00",
+  "regime": "R2",
+  "eth_price": 3233.1751500088226,
+  "core_signal": {
+    "date": "2026-01-06",
+    "regime": "R2",
+    "direction": "LONG",
+    "model_probability": 0.10677316719618873,
+    "adjusted_confidence": 0.0,
+    "position_size": 0.0,
+    "reasons": [
+      "low_model_probability"
+    ],
+    "action": "NO_TRADE",
+    "engine": "core_trend"
+  },
+  "ml_predictions": {}
+}

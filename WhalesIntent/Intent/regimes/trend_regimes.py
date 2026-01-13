@@ -1,4 +1,4 @@
-# regimes/regime_detector.py
+# regime_detector.py
 import pandas as pd
 import numpy as np
 

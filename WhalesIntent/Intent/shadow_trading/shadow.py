@@ -1,4 +1,4 @@
-# evaluation/shadow.py - SIMPLIFIED VERSION
+# evaluation/shadow.py - 
 import pandas as pd
 import numpy as np
 import os
@@ -8,8 +8,8 @@ import sys
 sys.path.append('.')  # Add current directory to path
 
 try:
-    from shadow_trader import ShadowTrader
-    from shadow_analysis import ShadowAnalysis
+    from shadow_trading.shadow_trader import ShadowTrader
+    from shadow_trading.shadow_analysis import ShadowAnalysis
     print("✅ Imported existing shadow trading modules")
 except ImportError:
     print("❌ Could not import shadow trading modules")

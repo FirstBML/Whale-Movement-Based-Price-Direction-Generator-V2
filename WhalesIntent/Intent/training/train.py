@@ -78,7 +78,7 @@ def train_multi_models(df_pipeline, direction='LONG'):
     print(f"\n🤖 Training {direction} models...")
     
     # Get feature lists
-    from core_trend_engine import LONG_FEATURES, SHORT_FEATURES
+    from engines.core_trend_engine import LONG_FEATURES, SHORT_FEATURES
     
     if direction == 'LONG':
         df_train = df_pipeline[df_pipeline['regime_code'].isin(['R1', 'R2'])].copy()

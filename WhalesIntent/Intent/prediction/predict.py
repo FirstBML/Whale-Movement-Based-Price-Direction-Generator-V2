@@ -7,7 +7,7 @@ import os
 from data.features import engineer_features
 from regimes.trend_regimes import define_trend_regimes
 from regimes.r5_distribution import detect_r5_distribution
-from core_trend_engine import CoreTrendEngine
+from WhalesIntent.Intent.engines.core_trend_engine import CoreTrendEngine
 
 class PredictionOrchestrator:
     """Orchestrates prediction using trained models"""

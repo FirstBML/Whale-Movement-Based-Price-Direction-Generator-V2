@@ -20,7 +20,7 @@ load_dotenv()
 
 # ========== IMPORT MODULAR ENGINES ==========
 try:
-    from core_trend_engine import CoreTrendEngine, rebuild_core_models
+    from WhalesIntent.Intent.engines.core_trend_engine import CoreTrendEngine, rebuild_core_models
     print("✅ Core Trend Engine imported successfully")
 except ImportError as e:
     print(f"❌ Could not import Core Trend Engine: {e}")
@@ -35,7 +35,7 @@ except ImportError:
     R6MeanReversionEngine = None
 
 try:
-    from unified_orchestrator import UnifiedOrchestrator
+    from WhalesIntent.Intent.pipeline.unified_orchestrator import UnifiedOrchestrator
     print("✅ Unified Orchestrator imported successfully")
 except ImportError:
     print("⚠️  Unified Orchestrator not available")
@@ -457,7 +457,7 @@ def build_pipeline_complete(df_features):
     # Ensure all required features exist (check with core engine if available)
     if CoreTrendEngine:
         # Get feature lists from core engine
-        from core_trend_engine import LONG_FEATURES, SHORT_FEATURES
+        from WhalesIntent.Intent.engines.core_trend_engine import LONG_FEATURES, SHORT_FEATURES
         for feature in LONG_FEATURES + SHORT_FEATURES:
             if feature not in df_complete.columns:
                 df_complete[feature] = 0.0

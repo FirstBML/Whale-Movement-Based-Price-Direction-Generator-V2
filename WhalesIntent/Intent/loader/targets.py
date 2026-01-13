@@ -64,5 +64,3 @@ def create_targets_two_tier(df, k=1.5):
     print(f"  Total DOWN:         {total_down:4d}")
     
     return df
-
-
