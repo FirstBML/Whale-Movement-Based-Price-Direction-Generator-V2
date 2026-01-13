@@ -113,7 +113,7 @@ class UnifiedOrchestrator:
         latest_row = df.iloc[-1].copy()
         
         # Get trend signal (from existing system)
-        from Intent.main import generate_unified_signal
+        from WhalesIntent.Intent.former_main import generate_unified_signal
         
         trend_signal = generate_unified_signal(latest_row, df, trend_short_model, trend_long_model)
         
