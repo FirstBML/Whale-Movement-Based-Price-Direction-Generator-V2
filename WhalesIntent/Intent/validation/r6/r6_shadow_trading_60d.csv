@@ -1,61 +1,61 @@
 date,direction,model_type,regime,r6_regime_active,entry_triggered,confidence,reasons,veto_reasons,position_size,quality_metrics
-2025-11-08,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_0.84'],[],0.0,{}
-2025-11-09,LONG,r6_mean_reversion,R3,False,False,0.0,['vol_ratio_too_low_0.93'],[],0.0,{}
-2025-11-10,LONG,r6_mean_reversion,R3,False,False,0.0,['vol_ratio_too_low_0.98'],[],0.0,{}
-2025-11-11,LONG,r6_mean_reversion,R5,False,False,0.0,['single_day_trend_too_strong'],[],0.0,{}
-2025-11-12,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_0.85'],[],0.0,{}
-2025-11-13,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.84'],[],0.0,{}
-2025-11-14,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_0.91'],[],0.0,{}
-2025-11-15,LONG,r6_mean_reversion,R3,False,False,0.0,['single_day_trend_too_strong'],[],0.0,{}
-2025-11-16,LONG,r6_mean_reversion,R3,False,False,0.0,['vol_ratio_too_low_1.16'],[],0.0,{}
-2025-11-17,LONG,r6_mean_reversion,R3,False,False,0.0,['vol_ratio_too_low_1.13'],[],0.0,{}
-2025-11-18,LONG,r6_mean_reversion,R4,False,False,0.0,['vol_ratio_too_low_0.80'],[],0.0,{}
-2025-11-19,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_0.81'],[],0.0,{}
-2025-11-20,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_0.84'],[],0.0,{}
-2025-11-21,LONG,r6_mean_reversion,R4,False,False,0.0,['vol_ratio_too_low_0.83'],[],0.0,{}
-2025-11-22,LONG,r6_mean_reversion,R4,False,False,0.0,['vol_ratio_too_low_0.86'],[],0.0,{}
-2025-11-23,LONG,r6_mean_reversion,R4,False,False,0.0,['vol_ratio_too_low_0.86'],[],0.0,{}
-2025-11-24,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_1.04'],[],0.0,{}
-2025-11-25,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_1.12'],[],0.0,{}
-2025-11-26,LONG,r6_mean_reversion,R3,False,False,0.0,['vol_ratio_too_low_1.19'],[],0.0,{}
+2025-11-08,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0051_vs_0.0043'],[],0.0,{}
+2025-11-09,LONG,r6_mean_reversion,R3,False,False,0.0,['trend_strength_too_high_0.0051_vs_0.0043'],[],0.0,{}
+2025-11-10,LONG,r6_mean_reversion,R3,False,False,0.0,['trend_strength_too_high_0.0051_vs_0.0043'],[],0.0,{}
+2025-11-11,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0056_vs_0.0043'],[],0.0,{}
+2025-11-12,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0059_vs_0.0043'],[],0.0,{}
+2025-11-13,LONG,r6_mean_reversion,R0,False,False,0.0,['trend_strength_too_high_0.0059_vs_0.0043'],[],0.0,{}
+2025-11-14,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0061_vs_0.0043'],[],0.0,{}
+2025-11-15,LONG,r6_mean_reversion,R3,False,False,0.0,['trend_strength_too_high_0.0066_vs_0.0043'],[],0.0,{}
+2025-11-16,LONG,r6_mean_reversion,R3,False,False,0.0,['trend_strength_too_high_0.0072_vs_0.0043'],[],0.0,{}
+2025-11-17,LONG,r6_mean_reversion,R3,False,False,0.0,['trend_strength_too_high_0.0080_vs_0.0043'],[],0.0,{}
+2025-11-18,LONG,r6_mean_reversion,R4,False,False,0.0,['trend_strength_too_high_0.0087_vs_0.0043'],[],0.0,{}
+2025-11-19,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0093_vs_0.0043'],[],0.0,{}
+2025-11-20,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0097_vs_0.0043'],[],0.0,{}
+2025-11-21,LONG,r6_mean_reversion,R4,False,False,0.0,['trend_strength_too_high_0.0103_vs_0.0043'],[],0.0,{}
+2025-11-22,LONG,r6_mean_reversion,R4,False,False,0.0,['trend_strength_too_high_0.0114_vs_0.0043'],[],0.0,{}
+2025-11-23,LONG,r6_mean_reversion,R4,False,False,0.0,['trend_strength_too_high_0.0123_vs_0.0043'],[],0.0,{}
+2025-11-24,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0128_vs_0.0043'],[],0.0,{}
+2025-11-25,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0131_vs_0.0043'],[],0.0,{}
+2025-11-26,LONG,r6_mean_reversion,R3,False,False,0.0,['trend_strength_too_high_0.0130_vs_0.0043'],[],0.0,{}
 2025-11-27,LONG,r6_mean_reversion,R0,False,False,0.0,['trend_strength_too_high_0.0124_vs_0.0043'],[],0.0,{}
 2025-11-28,LONG,r6_mean_reversion,R0,False,False,0.0,['trend_strength_too_high_0.0116_vs_0.0043'],[],0.0,{}
-2025-11-29,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2025-11-30,LONG,r6_mean_reversion,R2,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2025-12-01,LONG,r6_mean_reversion,R2,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2025-12-02,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_1.09'],[],0.0,{}
-2025-12-03,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_1.07'],[],0.0,{}
-2025-12-04,LONG,r6_mean_reversion,R5,False,False,0.0,['single_day_trend_too_strong'],[],0.0,{}
-2025-12-05,LONG,r6_mean_reversion,R0,False,False,0.0,['single_day_trend_too_strong'],[],0.0,{}
+2025-11-29,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0108_vs_0.0043'],[],0.0,{}
+2025-11-30,LONG,r6_mean_reversion,R2,False,False,0.0,['trend_strength_too_high_0.0102_vs_0.0043'],[],0.0,{}
+2025-12-01,LONG,r6_mean_reversion,R2,False,False,0.0,['trend_strength_too_high_0.0095_vs_0.0043'],[],0.0,{}
+2025-12-02,LONG,r6_mean_reversion,R0,False,False,0.0,['trend_strength_too_high_0.0090_vs_0.0043'],[],0.0,{}
+2025-12-03,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0082_vs_0.0043'],[],0.0,{}
+2025-12-04,LONG,r6_mean_reversion,R5,False,False,0.0,['trend_strength_too_high_0.0072_vs_0.0043'],[],0.0,{}
+2025-12-05,LONG,r6_mean_reversion,R0,False,False,0.0,['trend_strength_too_high_0.0064_vs_0.0043'],[],0.0,{}
 2025-12-06,LONG,r6_mean_reversion,R0,False,False,0.0,['trend_strength_too_high_0.0060_vs_0.0043'],[],0.0,{}
 2025-12-07,LONG,r6_mean_reversion,R0,False,False,0.0,['trend_strength_too_high_0.0056_vs_0.0043'],[],0.0,{}
 2025-12-08,LONG,r6_mean_reversion,R0,False,False,0.0,['trend_strength_too_high_0.0052_vs_0.0043'],[],0.0,{}
-2025-12-09,LONG,r6_mean_reversion,R1,False,False,0.0,['vol_ratio_too_low_1.04'],[],0.0,{}
-2025-12-10,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_1.03'],[],0.0,{}
-2025-12-11,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.83'],[],0.0,{}
-2025-12-12,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_0.94'],[],0.0,{}
-2025-12-13,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.90'],[],0.0,{}
-2025-12-14,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.91'],[],0.0,{}
-2025-12-15,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.98'],[],0.0,{}
-2025-12-16,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.94'],[],0.0,{}
-2025-12-17,LONG,r6_mean_reversion,R3,False,False,0.0,['vol_ratio_too_low_0.95'],[],0.0,{}
-2025-12-18,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_0.51'],[],0.0,{}
-2025-12-19,LONG,r6_mean_reversion,R5,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2025-12-20,LONG,r6_mean_reversion,R4,False,False,0.0,['vol_ratio_too_low_0.71'],[],0.0,{}
-2025-12-21,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.74'],[],0.0,{}
-2025-12-22,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.82'],[],0.0,{}
-2025-12-23,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.86'],[],0.0,{}
-2025-12-24,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.68'],[],0.0,{}
-2025-12-25,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.67'],[],0.0,{}
-2025-12-26,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.60'],[],0.0,{}
-2025-12-27,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2025-12-28,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2025-12-29,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2025-12-30,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2025-12-31,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2026-01-01,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2026-01-02,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2026-01-03,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2026-01-04,LONG,r6_mean_reversion,R0,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2026-01-05,LONG,r6_mean_reversion,R2,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
-2026-01-06,LONG,r6_mean_reversion,R2,False,False,0.0,['vol_ratio_too_low_0.50'],[],0.0,{}
+2025-12-09,LONG,r6_mean_reversion,R1,False,False,0.0,['trend_strength_too_high_0.0044_vs_0.0043'],[],0.0,{}
+2025-12-10,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_1.03', 'zscore_not_stretched_-0.74']",[],0.0,{'price_zscore': np.float64(-0.74235649799499)}
+2025-12-11,LONG,r6_mean_reversion,R0,False,False,0.0,['single_day_trend_too_strong_0.044'],[],0.0,{}
+2025-12-12,LONG,r6_mean_reversion,R5,False,False,0.0,['single_day_trend_too_strong_-0.037'],[],0.0,{}
+2025-12-13,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.90', 'zscore_not_stretched_-1.09']",[],0.0,{'price_zscore': np.float64(-1.0891517296290807)}
+2025-12-14,LONG,r6_mean_reversion,R0,False,False,0.0,['single_day_trend_too_strong_-0.027'],[],0.0,{}
+2025-12-15,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.98', 'zscore_not_stretched_-1.11']",[],0.0,{'price_zscore': np.float64(-1.1144859896525285)}
+2025-12-16,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.94', 'zscore_not_stretched_-1.31']",[],0.0,{'price_zscore': np.float64(-1.3147366497838215)}
+2025-12-17,LONG,r6_mean_reversion,R3,False,False,0.0,['single_day_trend_too_strong_-0.041'],[],0.0,{}
+2025-12-18,LONG,r6_mean_reversion,R5,False,False,0.0,['in_trend_or_distribution_R5'],[],0.0,{}
+2025-12-19,LONG,r6_mean_reversion,R5,False,False,0.0,['in_trend_or_distribution_R5'],[],0.0,{}
+2025-12-20,LONG,r6_mean_reversion,R4,False,False,0.0,['single_day_trend_too_strong_0.029'],[],0.0,{}
+2025-12-21,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.74', 'zscore_not_stretched_-1.12']",[],0.0,{'price_zscore': np.float64(-1.116415296602655)}
+2025-12-22,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.82', 'zscore_not_stretched_-1.01']",[],0.0,{'price_zscore': np.float64(-1.0078440813303078)}
+2025-12-23,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.86', 'zscore_not_stretched_-1.10']",[],0.0,{'price_zscore': np.float64(-1.0971329657848747)}
+2025-12-24,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.68', 'zscore_not_stretched_-1.13']",[],0.0,{'price_zscore': np.float64(-1.126039993448352)}
+2025-12-25,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.67', 'zscore_not_stretched_-1.10']",[],0.0,{'price_zscore': np.float64(-1.0971178580786398)}
+2025-12-26,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.60', 'zscore_not_stretched_-1.07']",[],0.0,{'price_zscore': np.float64(-1.0655509321431875)}
+2025-12-27,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.50', 'zscore_not_stretched_-1.07']",[],0.0,{'price_zscore': np.float64(-1.070689043658085)}
+2025-12-28,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.50', 'zscore_not_stretched_-1.03']",[],0.0,{'price_zscore': np.float64(-1.0261117959615795)}
+2025-12-29,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.50', 'zscore_not_stretched_-0.96']",[],0.0,{'price_zscore': np.float64(-0.9552225770678627)}
+2025-12-30,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.50', 'zscore_not_stretched_-0.94']",[],0.0,{'price_zscore': np.float64(-0.9431721923571044)}
+2025-12-31,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.50', 'zscore_not_stretched_-0.90']",[],0.0,{'price_zscore': np.float64(-0.8978872194766506)}
+2026-01-01,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.50', 'zscore_not_stretched_-0.87']",[],0.0,{'price_zscore': np.float64(-0.8692098215341223)}
+2026-01-02,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.50', 'zscore_not_stretched_-0.71']",[],0.0,{'price_zscore': np.float64(-0.7052170033451659)}
+2026-01-03,LONG,r6_mean_reversion,R0,False,False,0.0,['single_day_trend_too_strong_0.025'],[],0.0,{}
+2026-01-04,LONG,r6_mean_reversion,R0,True,False,0.0,"['r6_active_R0_vol_0.50', 'zscore_not_stretched_-0.51']",[],0.0,{'price_zscore': np.float64(-0.506724516486136)}
+2026-01-05,LONG,r6_mean_reversion,R2,False,False,0.0,['in_trend_or_distribution_R2'],[],0.0,{}
+2026-01-06,LONG,r6_mean_reversion,R2,False,False,0.0,['in_trend_or_distribution_R2'],[],0.0,{}

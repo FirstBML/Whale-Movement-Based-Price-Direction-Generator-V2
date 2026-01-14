@@ -15,5 +15,18 @@
     "action": "NO_TRADE",
     "engine": "core_trend"
   },
-  "ml_predictions": {}
+  "ml_predictions": {
+    "LONG": {
+      "probability": 0.2391079741276959,
+      "threshold": null,
+      "auc": 0.6303577183370932,
+      "signal": "HOLD"
+    },
+    "SHORT": {
+      "probability": 0.014505269937217236,
+      "threshold": null,
+      "auc": 0.8844603672189879,
+      "signal": "HOLD"
+    }
+  }
 }
