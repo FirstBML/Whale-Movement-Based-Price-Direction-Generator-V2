@@ -11,7 +11,9 @@ from loader.data_loader import load_cached_data
 from pipeline.pipeline_builder import build_pipeline_complete
 from engines.core_trend_engine import CoreTrendEngine
 from shadow_trading.shadow import run_shadow_trading
-from training.train import train_multi_models
+#from training.train import train_multi_models
+from training.train_long_model import train_long_model
+from training.train_short_model import train_short_model
 from evaluation.inspection import (
     export_signals_for_manual_inspection,
     create_manual_review_template
