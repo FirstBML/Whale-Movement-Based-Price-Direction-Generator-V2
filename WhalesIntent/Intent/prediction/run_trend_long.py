@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 def run_trend_long_pipeline():
     """
     Execute complete Trend LONG pipeline using Core Engine

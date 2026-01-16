@@ -1,6 +1,6 @@
 {
   "direction": "LONG",
-  "auc": 0.6303577183370932,
+  "auc": 0.6669859514687101,
   "model_type": "random_forest",
   "features": [
     "btc_rsi",
@@ -20,29 +20,29 @@
     "whale_exchange_flow_ratio",
     "tx_per_active_zscore_90d"
   ],
-  "train_date": "2026-01-13T19:08:07.245602",
-  "n_samples": 544,
+  "train_date": "2026-01-14T06:16:55.617304",
+  "n_samples": 545,
   "results": [
     {
       "model": "logistic",
-      "auc": 0.5307766677408959,
-      "precision": 0.26785714285714285,
+      "auc": 0.5577905491698596,
+      "precision": 0.2830188679245283,
       "recall": 0.5172413793103449,
-      "n_samples": 544
+      "n_samples": 545
     },
     {
       "model": "random_forest",
-      "auc": 0.6303577183370932,
-      "precision": 0.391304347826087,
+      "auc": 0.6669859514687101,
+      "precision": 0.42857142857142855,
       "recall": 0.3103448275862069,
-      "n_samples": 544
+      "n_samples": 545
     },
     {
       "model": "xgboost",
-      "auc": 0.587495971640348,
-      "precision": 0.6666666666666666,
-      "recall": 0.06896551724137931,
-      "n_samples": 544
+      "auc": 0.613346104725415,
+      "precision": 0.2,
+      "recall": 0.034482758620689655,
+      "n_samples": 545
     }
   ]
 }

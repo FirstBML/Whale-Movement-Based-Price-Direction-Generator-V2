@@ -1,5 +1,5 @@
 import numpy as np
-import pandas
+import pandas as pd
 
 def price_not_near_lows(row, df, lookback=90, min_pct=0.25):
     """

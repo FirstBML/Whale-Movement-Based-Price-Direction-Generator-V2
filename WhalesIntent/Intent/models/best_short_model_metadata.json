@@ -1,6 +1,6 @@
 {
   "direction": "SHORT",
-  "auc": 0.8844603672189879,
+  "auc": 0.8826702033598586,
   "model_type": "xgboost",
   "features": [
     "exchange_flow_share",
@@ -11,31 +11,30 @@
     "btc_ret_lag1",
     "btc_ret_lag3",
     "eth_btc_corr_30d",
-    "whale_volume_ratio_delta_3d",
-    "exchange_volume_zscore"
+    "whale_volume_ratio_delta_3d"
   ],
-  "train_date": "2026-01-13T19:08:07.989103",
+  "train_date": "2026-01-14T06:16:56.513764",
   "n_samples": 888,
   "results": [
     {
       "model": "logistic",
-      "auc": 0.5553963278101208,
-      "precision": 0.38738738738738737,
-      "recall": 0.5584415584415584,
+      "auc": 0.6399646330680814,
+      "precision": 0.4224137931034483,
+      "recall": 0.6282051282051282,
       "n_samples": 888
     },
     {
       "model": "random_forest",
-      "auc": 0.8799820868786385,
-      "precision": 0.7407407407407407,
-      "recall": 0.7792207792207793,
+      "auc": 0.87763041556145,
+      "precision": 0.7294117647058823,
+      "recall": 0.7948717948717948,
       "n_samples": 888
     },
     {
       "model": "xgboost",
-      "auc": 0.8844603672189879,
-      "precision": 0.7631578947368421,
-      "recall": 0.7532467532467533,
+      "auc": 0.8826702033598586,
+      "precision": 0.7714285714285715,
+      "recall": 0.6923076923076923,
       "n_samples": 888
     }
   ]
