@@ -15,7 +15,7 @@
     "window_days": 48,
     "max_price": 4694.759508780508,
     "min_price": 3804.054700002993,
-    "signal_details": "{\"date\": \"2025-08-26\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9850267978113164, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"btc_breakdown\", \"vol_expansion\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
+    "signal_details": "{\"date\": \"2025-08-26\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9512075207895672, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"btc_breakdown\", \"vol_expansion\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
   },
   {
     "trade_id": 2,
@@ -33,7 +33,7 @@
     "window_days": 48,
     "max_price": 4694.759508780508,
     "min_price": 3804.054700002993,
-    "signal_details": "{\"date\": \"2025-08-27\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9599265459953328, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"vol_expansion\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
+    "signal_details": "{\"date\": \"2025-08-27\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.8924242424242423, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"vol_expansion\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
   },
   {
     "trade_id": 3,
@@ -51,7 +51,7 @@
     "window_days": 48,
     "max_price": 4623.289376189229,
     "min_price": 3184.0579340413674,
-    "signal_details": "{\"date\": \"2025-09-27\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9611575929755817, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"vol_expansion\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
+    "signal_details": "{\"date\": \"2025-09-27\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.8775119617224881, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"vol_expansion\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
   },
   {
     "trade_id": 4,
@@ -69,7 +69,7 @@
     "window_days": 48,
     "max_price": 4181.177735336861,
     "min_price": 2745.62979473441,
-    "signal_details": "{\"date\": \"2025-10-15\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9713648482027085, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"btc_breakdown\", \"vol_expansion\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
+    "signal_details": "{\"date\": \"2025-10-15\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9490662139219015, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"btc_breakdown\", \"vol_expansion\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
   },
   {
     "trade_id": 5,
@@ -87,7 +87,7 @@
     "window_days": 48,
     "max_price": 3585.690547110349,
     "min_price": 2745.62979473441,
-    "signal_details": "{\"date\": \"2025-11-04\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9684736323550959, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"btc_breakdown\", \"low_volatility\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
+    "signal_details": "{\"date\": \"2025-11-04\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9806451612903226, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"btc_breakdown\", \"low_volatility\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
   },
   {
     "trade_id": 6,
@@ -105,6 +105,6 @@
     "window_days": 48,
     "max_price": 3333.2962523632555,
     "min_price": 2745.62979473441,
-    "signal_details": "{\"date\": \"2025-11-19\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9797776857454659, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"btc_breakdown\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
+    "signal_details": "{\"date\": \"2025-11-19\", \"regime\": \"R5\", \"direction\": \"SHORT\", \"model_probability\": 0.9490662139219015, \"adjusted_confidence\": 0.85, \"position_size\": 1.0, \"reasons\": [\"btc_breakdown\"], \"action\": \"ENTER\", \"engine\": \"core_trend\"}"
   }
 ]

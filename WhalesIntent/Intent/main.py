@@ -10,8 +10,7 @@ import joblib
 from loader.data_loader import load_cached_data
 from pipeline.pipeline_builder import build_pipeline_complete
 from engines.core_trend_engine import CoreTrendEngine
-from shadow_trading.shadow import run_shadow_trading
-#from training.train import train_multi_models
+from shadow_trading.run_shadow_trading import run_shadow_trading
 from training.train_long_model import train_long_model
 from training.train_short_model import train_short_model
 from evaluation.inspection import (
@@ -71,50 +70,63 @@ def generate_daily_signal():
 
 # ML PREDICTION
 def run_prediction():
+    """Run ML prediction with full output"""
     print("\n" + "=" * 70)
     print("RUNNING ML PREDICTION")
     print("=" * 70)
 
+    # Load pipeline
     df = load_or_build_pipeline()
-    latest_row = df.iloc[-1]
+    
+    # Initialize predictor
+    from prediction.predict import PredictionOrchestrator
+    predictor = PredictionOrchestrator(model_dir='models')
+    
+    # Load models
+    models_loaded = predictor.load_models()
+    
+    if not any(models_loaded.values()):
+        print("❌ No models loaded - train models first")
+        return None
 
-    engine = CoreTrendEngine()
-    engine.load_models()
-
-    core_signal = engine.generate_core_signal(latest_row, df)
-    predictions = {}
-
-    for direction in ["LONG", "SHORT"]:
-        model_path = f"models/best_{direction.lower()}_model.pkl"
-        if not os.path.exists(model_path):
-            continue
-
-        model, metadata = load_model_with_metadata(model_path)
-        features = metadata.get("features", [])
-
-        X = latest_row.reindex(features, fill_value=0).values.reshape(1, -1)
-        prob = model.predict_proba(X)[0, 1]
-
-        predictions[direction] = {
-            "probability": float(prob),
-            "threshold": metadata.get("threshold"),
-            "auc": metadata.get("auc"),
-            "signal": "BUY" if prob >= metadata.get("threshold", 1) else "HOLD"
-        }
-
-    combined = {
-        "date": str(latest_row["block_date"]),
-        "regime": latest_row["regime_code"],
-        "eth_price": float(latest_row["eth_price"]),
-        "core_signal": core_signal,
-        "ml_predictions": predictions
-    }
-
+    # Generate prediction
+    prediction = predictor.predict_signal(df)
+    
+    # Save to file
+    os.makedirs("data", exist_ok=True)
     with open("data/latest_prediction.json", "w") as f:
-        json.dump(combined, f, indent=2)
+        json.dump(prediction, f, indent=2)
 
-    print(json.dumps(combined, indent=2))
-    return combined
+    # Print formatted output
+    print("\n" + "=" * 70)
+    print("PREDICTION OUTPUT")
+    print("=" * 70)
+    
+    print(f"\n📅 Date: {prediction['date']}")
+    print(f"🏷️  Regime: {prediction['regime']}")
+    print(f"💰 ETH Price: ${prediction['eth_price']:.2f}")
+    
+    signal = prediction['signal']
+    print(f"\n🎯 Signal:")
+    print(f"   Action: {signal['action']}")
+    print(f"   Direction: {signal['direction']}")
+    print(f"   Confidence: {signal['confidence']:.3f}")
+    print(f"   Position Size: {signal['position_size']:.2f}x")
+    print(f"   Model Probability: {signal['model_probability']:.3f}")
+    print(f"   Reasons: {', '.join(signal['reasons'])}")
+    
+    if 'model_info' in prediction:
+        print(f"\n📊 Model Info:")
+        for key, value in prediction['model_info'].items():
+            print(f"   {key}: {value}")
+    
+    print(f"\n📈 Market Context:")
+    for key, value in prediction['market_context'].items():
+        print(f"   {key}: {value:.4f}")
+    
+    print(f"\n💾 Saved to: data/latest_prediction.json")
+    
+    return prediction
 
 def load_model_with_metadata(path):
     model = joblib.load(path)
@@ -135,11 +147,12 @@ def train_models():
 
     df = load_or_build_pipeline()
 
-    print("\n🔹 Training LONG models")
-    train_multi_models(df, direction="LONG")
+    print("\n🔹 Training SHORT model")
+    from training.train_short_model import train_short_model
+    train_short_model(df)
 
-    print("\n🔹 Training SHORT models")
-    train_multi_models(df, direction="SHORT")
+    print("\n🔹 Training LONG model")
+    train_long_model(df)
 
     print("\n✅ Training complete")
 

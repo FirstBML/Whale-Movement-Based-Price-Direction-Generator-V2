@@ -1,19 +1,5 @@
 """
-train_long_model.py
-========================================================
-Production training pipeline for LONG model (R1 / R2)
-
-Design principles:
-- Regime-gated (R1, R2 only)
-- Binary target: UP vs rest
-- Time-aware split (NO random shuffle)
-- Isotonic calibration
-- Conservative thresholds
-- Export-ready for CoreTrendEngine
-
-Notebook role: SANITY ONLY
-This file: SOURCE OF TRUTH
-========================================================
+# train_long_model.py
 """
 
 import os
@@ -196,3 +182,30 @@ def train_long_model(df_pipeline: pd.DataFrame):
     print(f"   Version: {MODEL_VERSION}")
 
     return export_payload
+
+
+# ======================================================
+# MAIN EXECUTION
+# ======================================================
+
+if __name__ == "__main__":
+    # Load your data
+    print("📂 Loading data...")
+    
+    try:
+        # Adjust this path to your actual data file
+        df_pipeline = pd.read_parquet("../../data/pipeline/pipeline_data.parquet")
+        # Or if it's a CSV:
+        # df_pipeline = pd.read_csv("../../data/pipeline/pipeline_data.csv")
+        
+        print(f"✅ Data loaded: {len(df_pipeline)} rows")
+        
+        # Train the model
+        train_long_model(df_pipeline)
+        
+    except FileNotFoundError as e:
+        print(f"❌ Error: Data file not found at {e.filename}")
+        print("Please update the file path in train_long_model.py")
+        
+    except Exception as e:
+        print(f"❌ Error: {str(e)}")

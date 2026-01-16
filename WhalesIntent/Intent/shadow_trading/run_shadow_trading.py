@@ -1,30 +1,30 @@
-# run_shadow_trading.py
-from engines.core_trend_engine import CoreTrendEngine
+# shadow_trading/run_shadow_trading.py
+
+import json
 from shadow_trading.shadow_trader import ShadowTrader
-import joblib
-import pandas as pd
 
-# Load data
-df = pd.read_parquet("data/pipeline_latest.parquet")
+def run_shadow_trading(df, engine, days=60):
+    print("\n" + "=" * 70)
+    print("RUNNING SHADOW TRADING")
+    print("=" * 70)
 
-# Load engine + model
-engine = CoreTrendEngine()
-engine.load_models("models")
+    df = df.sort_values("block_date").tail(days).reset_index(drop=True)
 
-# Load calibrated SHORT model
-meta = joblib.load("models/r5_short_final_v1.1.pkl")
-engine.short_model = meta['model']
+    trader = ShadowTrader()
 
-# Shadow trader
-trader = ShadowTrader()
+    for i in range(len(df)):
+        current_row = df.iloc[i]
+        history = df.iloc[:i + 1]  # ⛔ only past data
 
-# Run daily loop
-for _, row in df.iterrows():
-    signal = engine.generate_core_signal(row, df)
-    trader.log_trade(signal, df)
+        signal = engine.generate_core_signal(
+            current_row,
+            history
+        )
 
-# Save results
-trader.save_trades("shadow_trading/shadow_trades_v1.1.csv")
+        if signal.get("action") == "ENTER":
+            trader.log_trade(signal, history)
 
-# Quick report
-print(trader.get_performance_report())
+    trader.save_trades(f"shadow_trading/shadow_trades_{days}d.csv")
+
+    report = trader.get_performance_report()
+    print(json.dumps(report, indent=2))

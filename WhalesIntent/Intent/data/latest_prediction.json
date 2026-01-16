@@ -1,32 +1,23 @@
 {
-  "date": "2026-01-06 00:00:00+00:00",
+  "timestamp": "2026-01-16T19:22:36.556493",
+  "date": "2026-01-06",
   "regime": "R2",
   "eth_price": 3233.1751500088226,
-  "core_signal": {
-    "date": "2026-01-06",
-    "regime": "R2",
+  "btc_price": 93288.34557294182,
+  "signal": {
+    "action": "NO_TRADE",
     "direction": "LONG",
-    "model_probability": 0.10677316719618873,
-    "adjusted_confidence": 0.0,
+    "confidence": 0.0,
     "position_size": 0.0,
+    "model_probability": 0.21076377328670678,
     "reasons": [
       "low_model_probability"
     ],
-    "action": "NO_TRADE",
     "engine": "core_trend"
   },
-  "ml_predictions": {
-    "LONG": {
-      "probability": 0.2391079741276959,
-      "threshold": null,
-      "auc": 0.6303577183370932,
-      "signal": "HOLD"
-    },
-    "SHORT": {
-      "probability": 0.014505269937217236,
-      "threshold": null,
-      "auc": 0.8844603672189879,
-      "signal": "HOLD"
-    }
+  "market_context": {
+    "vol_ratio": 0.5,
+    "btc_ret_lag1": 0.0206197011235446,
+    "eth_ret_lag1": 0.014098486979367
   }
 }

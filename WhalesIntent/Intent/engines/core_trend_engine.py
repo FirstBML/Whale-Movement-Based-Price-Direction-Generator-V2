@@ -38,26 +38,29 @@ class CoreTrendEngine:
         self.long_model = None
         self.short_model = None
         
-    def load_models(self, model_dir='models'):
-        """Load pre-trained models"""
-        long_model_path = os.path.join(model_dir, 'R1_R2_LONG.pkl')
-        short_model_path = os.path.join(model_dir, 'r5_short_final.pkl')
-        
-        try:
-            if os.path.exists(long_model_path):
-                self.long_model = joblib.load(long_model_path)
-                print(f"✅ LONG model loaded: {len(self.long_model.feature_names_)} features")
-            else:
-                print(f"⚠️  LONG model not found: {long_model_path}")
-            
-            if os.path.exists(short_model_path):
-                self.short_model = joblib.load(short_model_path)
-                print(f"✅ SHORT model loaded: {len(self.short_model.feature_names_)} features")
-            else:
-                print(f"⚠️  SHORT model not found: {short_model_path}")
-                
-        except Exception as e:
-            print(f"❌ Error loading models: {e}")
+    def load_models(self, model_dir="models"):
+        """
+        Load LONG and SHORT production models
+        """
+
+        # ---------- SHORT ----------
+        short_path = os.path.join(model_dir, "r5_short_final_v1.1.pkl")
+        if os.path.exists(short_path):
+            short_payload = joblib.load(short_path)
+            self.short_model = short_payload["model"]
+            self.short_meta = short_payload
+
+        # ---------- LONG ----------
+        long_path = os.path.join(model_dir, "r1r2_long_final_v1.0.pkl")
+        if os.path.exists(long_path):
+            long_payload = joblib.load(long_path)
+            self.long_model = long_payload["model"]
+            self.long_meta = long_payload
+
+        print("✅ Models loaded:")
+        print(f"   SHORT: {'YES' if hasattr(self, 'short_model') else 'NO'}")
+        print(f"   LONG : {'YES' if hasattr(self, 'long_model') else 'NO'}")
+
     
     def long_veto(self, row):
         """LONG veto - minimal and asymmetric"""
