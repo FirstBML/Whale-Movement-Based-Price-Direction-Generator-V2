@@ -1,13 +1,27 @@
 """
 ETH WHALE ALPHA - Main Orchestrator
 """
+from utils.parallel_fix import SingleThreadParallel  # ✅ Monkey-patch first
+import warnings
+warnings.filterwarnings('ignore')
 
+warnings.filterwarnings('ignore', category=UserWarning)
+warnings.filterwarnings('ignore', category=FutureWarning)
+warnings.filterwarnings('ignore', category=RuntimeWarning)
+
+# Specifically filter the parallel warning
+warnings.filterwarnings(
+    'ignore',
+    message='.*sklearn.utils.parallel.delayed.*',
+    module='sklearn'
+)
 import os
 import json
 import pandas as pd
 import joblib
 
 from loader.data_loader import load_cached_data
+from prediction.predict import run_prediction
 from pipeline.pipeline_builder import build_pipeline_complete
 from engines.core_trend_engine import CoreTrendEngine
 from shadow_trading.run_shadow_trading import run_shadow_trading
@@ -17,6 +31,57 @@ from evaluation.inspection import (
     export_signals_for_manual_inspection,
     create_manual_review_template
 )
+
+def print_prediction(output: dict):
+    print("\n" + "=" * 70)
+    print("📡 ETH WHALE ALPHA — ENGINE DECISION")
+    print("=" * 70)
+
+    print(f"\n📅 Date: {output['date']}")
+    print(f"🏷️  Regime: {output['regime']}")
+    print(f"🧠 Engine: {output['engine']}")
+
+    signal = output["signal"]
+
+    print("\n🎯 CORE SIGNAL")
+    print("-" * 40)
+    print(f"Action        : {signal['action']}")
+    print(f"Direction     : {signal['direction']}")
+    print(f"Model Prob.   : {signal['model_probability']:.4f}")
+    print(f"Confidence    : {signal['adjusted_confidence']:.4f}")
+    print(f"Position Size : {signal['position_size']:.2f}x")
+
+    print("\n🧾 Reasons")
+    for r in signal["reasons"]:
+        print(f" • {r}")
+
+    print("\n" + "=" * 70)
+
+def print_engine_decision(signal):
+    print("\n" + "=" * 70)
+    print("📡 ETH WHALE ALPHA — ENGINE DECISION")
+    print("=" * 70)
+
+    print(f"\n📅 Date: {signal['date']}")
+    print(f"🏷️  Regime: {signal['regime']}")
+    print(f"🧠 Engine: {signal.get('engine', 'core_trend')}")  # ✅ Use .get() for safety
+
+    print("\n🎯 CORE SIGNAL")
+    print("-" * 40)
+    print(f"Action        : {signal['action']}")
+    print(f"Direction     : {signal['direction']}")
+    print(f"Model Prob.   : {signal.get('model_probability', 0):.4f}")
+    print(f"Confidence    : {signal.get('adjusted_confidence', 0):.4f}")
+    print(f"Position Size : {signal.get('position_size', 0):.2f}x")
+
+    print("\n🧾 Reasons")
+    reasons = signal.get('reasons', [])
+    if reasons:
+        for r in reasons:
+            print(f" • {r}")
+    else:
+        print(" • No specific reasons")
+
 
 # PIPELINE
 def build_pipeline(save=True):
@@ -68,65 +133,6 @@ def generate_daily_signal():
     print(json.dumps(signal, indent=2))
     return signal
 
-# ML PREDICTION
-def run_prediction():
-    """Run ML prediction with full output"""
-    print("\n" + "=" * 70)
-    print("RUNNING ML PREDICTION")
-    print("=" * 70)
-
-    # Load pipeline
-    df = load_or_build_pipeline()
-    
-    # Initialize predictor
-    from prediction.predict import PredictionOrchestrator
-    predictor = PredictionOrchestrator(model_dir='models')
-    
-    # Load models
-    models_loaded = predictor.load_models()
-    
-    if not any(models_loaded.values()):
-        print("❌ No models loaded - train models first")
-        return None
-
-    # Generate prediction
-    prediction = predictor.predict_signal(df)
-    
-    # Save to file
-    os.makedirs("data", exist_ok=True)
-    with open("data/latest_prediction.json", "w") as f:
-        json.dump(prediction, f, indent=2)
-
-    # Print formatted output
-    print("\n" + "=" * 70)
-    print("PREDICTION OUTPUT")
-    print("=" * 70)
-    
-    print(f"\n📅 Date: {prediction['date']}")
-    print(f"🏷️  Regime: {prediction['regime']}")
-    print(f"💰 ETH Price: ${prediction['eth_price']:.2f}")
-    
-    signal = prediction['signal']
-    print(f"\n🎯 Signal:")
-    print(f"   Action: {signal['action']}")
-    print(f"   Direction: {signal['direction']}")
-    print(f"   Confidence: {signal['confidence']:.3f}")
-    print(f"   Position Size: {signal['position_size']:.2f}x")
-    print(f"   Model Probability: {signal['model_probability']:.3f}")
-    print(f"   Reasons: {', '.join(signal['reasons'])}")
-    
-    if 'model_info' in prediction:
-        print(f"\n📊 Model Info:")
-        for key, value in prediction['model_info'].items():
-            print(f"   {key}: {value}")
-    
-    print(f"\n📈 Market Context:")
-    for key, value in prediction['market_context'].items():
-        print(f"   {key}: {value:.4f}")
-    
-    print(f"\n💾 Saved to: data/latest_prediction.json")
-    
-    return prediction
 
 def load_model_with_metadata(path):
     model = joblib.load(path)
@@ -176,10 +182,13 @@ def main_menu():
             build_pipeline()
 
         elif choice == "2":
-            generate_daily_signal()
+            output = generate_daily_signal()
+            print_engine_decision(output)
+
 
         elif choice == "3":
-            run_prediction()
+            output = run_prediction()
+            print_prediction(output)
 
         elif choice == "4":
             df = load_or_build_pipeline()

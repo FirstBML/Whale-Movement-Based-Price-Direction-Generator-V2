@@ -1,0 +1,24 @@
+{
+  "total_trades": 4,
+  "long_trades": 0,
+  "short_trades": 4,
+  "avg_mae": -7.84123569067614,
+  "avg_mfe": 20.85158696030574,
+  "avg_final_return": 13.995265588182836,
+  "win_rate": 0.75,
+  "sharpe_ratio": 0.9134829203459787,
+  "liquidation_risk_3x": 0,
+  "regime_distribution": {
+    "R5": 4
+  },
+  "best_trade": {
+    "date": "2025-10-15",
+    "direction": "SHORT",
+    "return": 29.201385615461195
+  },
+  "worst_trade": {
+    "date": "2025-11-19",
+    "direction": "SHORT",
+    "return": -6.666712177344891
+  }
+}

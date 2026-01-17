@@ -147,8 +147,8 @@ class ShadowTrader:
         except Exception as e:
             print(f"❌ Error saving trades: {e}")
     
-    def get_performance_report(self) -> Dict:
-        """Generate performance report from logged trades"""
+    def get_performance_report(self):
+        """Generate performance report - JSON-safe version"""
         if not self.trades:
             return {"error": "No trades logged"}
         
@@ -156,17 +156,20 @@ class ShadowTrader:
             df = pd.DataFrame(self.trades)
             
             report = {
-                'total_trades': len(df),
-                'long_trades': (df['direction'] == 'LONG').sum(),
-                'short_trades': (df['direction'] == 'SHORT').sum(),
-                'avg_mae': df['mae_pct'].mean(),
-                'avg_mfe': df['mfe_pct'].mean(),
-                'avg_final_return': df['final_pct'].mean(),
-                'win_rate': (df['final_pct'] > 0).sum() / len(df) if len(df) > 0 else 0,
-                'sharpe_ratio': df['final_pct'].mean() / df['final_pct'].std() if df['final_pct'].std() > 0 else 0,
-                'liquidation_risk_3x': (df['mae_pct'] < -33.33).sum(),
-                'regime_distribution': df['regime'].value_counts().to_dict()
+                'total_trades': int(len(df)),
+                'long_trades': int((df['direction'] == 'LONG').sum()),
+                'short_trades': int((df['direction'] == 'SHORT').sum()),
+                'avg_mae': float(df['mae_pct'].mean()),
+                'avg_mfe': float(df['mfe_pct'].mean()),
+                'avg_final_return': float(df['final_pct'].mean()),
+                'win_rate': float((df['final_pct'] > 0).sum()) / float(len(df)) if len(df) > 0 else 0.0,
+                'sharpe_ratio': float(df['final_pct'].mean()) / float(df['final_pct'].std()) if float(df['final_pct'].std()) > 0 else 0.0,
+                'liquidation_risk_3x': int((df['mae_pct'] < -33.33).sum())
             }
+            
+            # Convert regime distribution safely
+            regime_dist = df['regime'].value_counts().to_dict()
+            report['regime_distribution'] = {str(k): int(v) for k, v in regime_dist.items()}
             
             # Best and worst trades
             if len(df) > 0:
@@ -174,14 +177,14 @@ class ShadowTrader:
                 worst_idx = df['final_pct'].idxmin()
                 
                 report['best_trade'] = {
-                    'date': df.loc[best_idx, 'entry_date'],
-                    'direction': df.loc[best_idx, 'direction'],
+                    'date': str(df.loc[best_idx, 'entry_date']),
+                    'direction': str(df.loc[best_idx, 'direction']),
                     'return': float(df.loc[best_idx, 'final_pct'])
                 }
                 
                 report['worst_trade'] = {
-                    'date': df.loc[worst_idx, 'entry_date'],
-                    'direction': df.loc[worst_idx, 'direction'],
+                    'date': str(df.loc[worst_idx, 'entry_date']),
+                    'direction': str(df.loc[worst_idx, 'direction']),
                     'return': float(df.loc[worst_idx, 'final_pct'])
                 }
             
@@ -189,7 +192,7 @@ class ShadowTrader:
             
         except Exception as e:
             return {"error": f"Error generating report: {str(e)}"}
-    
+            
     def clear_trades(self):
         """Clear all logged trades"""
         self.trades = []

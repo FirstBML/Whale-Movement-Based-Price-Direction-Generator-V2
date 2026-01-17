@@ -115,7 +115,7 @@ def train_long_model(df_pipeline: pd.DataFrame):
         max_features="sqrt",
         class_weight="balanced",
         random_state=42,
-        n_jobs=-1
+        n_jobs=1
     )
 
     rf.fit(X_train, y_train)
