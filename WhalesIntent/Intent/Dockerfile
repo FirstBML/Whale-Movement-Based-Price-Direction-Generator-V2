@@ -1,21 +1,12 @@
-# Build stage
-FROM public.ecr.aws/lambda/python:3.11 as builder
-
-WORKDIR ${LAMBDA_TASK_ROOT}
-
-# Install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir --quiet -r requirements.txt
-
-# Runtime stage
 FROM public.ecr.aws/lambda/python:3.11
 
-WORKDIR ${LAMBDA_TASK_ROOT}
+WORKDIR /var/task
 
-# Copy only installed packages from builder
-COPY --from=builder ${LAMBDA_TASK_ROOT} ${LAMBDA_TASK_ROOT}
+# Install dependencies - scipy 1.10.1 has pre-built wheels
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy application
 COPY . .
 
 CMD ["prediction.handler.lambda_handler"]

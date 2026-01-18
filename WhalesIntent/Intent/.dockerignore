@@ -1,0 +1,43 @@
+# Exclude everything unnecessary
+.git
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.venv
+venv/
+ENV/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Data files
+#data/
+*.csv
+*.parquet
+*.pkl
+*.joblib
+!models/r5_short_final_v1.1.pkl
+!models/r1r2_long_final_v1.0.pkl
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Training artifacts
+training/
+notebooks/
+*.ipynb
+
+# Test files
+tests/
+*.test.py
