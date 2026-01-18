@@ -1,41 +1,76 @@
 """
 prediction/handler.py
-Complete AWS Lambda handler with S3 data loading
+Hybrid handler - works both locally and in AWS Lambda
 """
 
 import json
 import os
 import pandas as pd
-import boto3
-from io import StringIO
 from engines.core_trend_engine import CoreTrendEngine
+
+# Try importing boto3 (only available in Lambda or if installed locally)
+try:
+    import boto3
+    from io import StringIO
+    BOTO3_AVAILABLE = True
+except ImportError:
+    BOTO3_AVAILABLE = False
+    print("⚠️  boto3 not available - will use local data source")
 
 # ================================================================
 # CONFIGURATION
 # ================================================================
 
-# S3 bucket configuration (set via Lambda environment variables)
+# S3 bucket configuration (for Lambda)
 S3_BUCKET = os.environ.get('DATA_BUCKET', 'eth-whale-alpha-data')
 S3_KEY = os.environ.get('DATA_KEY', 'pipeline_complete.csv')
-
-# Initialize AWS clients
-s3_client = boto3.client('s3')
 
 # Global engine instance (reused across Lambda invocations)
 engine = None
 
 
 # ================================================================
-# S3 DATA LOADING
+# ENVIRONMENT DETECTION
 # ================================================================
+
+def is_lambda_environment():
+    """Check if running in real AWS Lambda (not Docker)"""
+    # Real Lambda has this specific environment variable pattern
+    aws_exec_env = os.environ.get('AWS_EXECUTION_ENV', '')
+    return aws_exec_env.startswith('AWS_Lambda_')
+
+# ================================================================
+# DATA LOADING - HYBRID APPROACH
+# ================================================================
+
+def load_data():
+    """
+    Smart data loading:
+    - Try S3 if in Lambda environment and boto3 available
+    - Fall back to local file otherwise
+    """
+    # If in Lambda and boto3 is available, use S3
+    if is_lambda_environment() and BOTO3_AVAILABLE:
+        try:
+            return load_data_from_s3()
+        except Exception as e:
+            print(f"⚠️  S3 load failed: {e}")
+            print("Falling back to local data...")
+            return load_data_from_local()
+    
+    # Otherwise, use local file
+    return load_data_from_local()
+
 
 def load_data_from_s3():
     """
-    Load pipeline data from S3
-    Uses streaming to avoid loading entire file into memory
+    Load pipeline data from S3 (Lambda environment)
     """
     try:
-        print(f"Loading data from s3://{S3_BUCKET}/{S3_KEY}")
+        print(f"☁️  Loading data from s3://{S3_BUCKET}/{S3_KEY}")
+        
+        # Initialize S3 client
+        s3_client = boto3.client('s3')
         
         # Stream data from S3
         obj = s3_client.get_object(
@@ -52,12 +87,38 @@ def load_data_from_s3():
         print(f"✅ Loaded {len(df)} rows from S3")
         return df
         
-    except s3_client.exceptions.NoSuchKey:
-        raise FileNotFoundError(
-            f"Data file not found: s3://{S3_BUCKET}/{S3_KEY}"
-        )
     except Exception as e:
         raise RuntimeError(f"Failed to load data from S3: {str(e)}")
+
+
+def load_data_from_local():
+    """
+    Load pipeline data from local file (local environment)
+    """
+    try:
+        print("📂 Loading data from local file...")
+        
+        # Try multiple possible paths
+        possible_paths = [
+            "data/pipeline_complete.csv",
+            "../data/pipeline_complete.csv",
+            "../../data/pipeline_complete.csv",
+            os.path.join(os.path.dirname(__file__), "../data/pipeline_complete.csv")
+        ]
+        
+        for path in possible_paths:
+            if os.path.exists(path):
+                df = pd.read_csv(path, parse_dates=["block_date"])
+                print(f"✅ Loaded {len(df)} rows from {path}")
+                return df
+        
+        raise FileNotFoundError(
+            "Could not find pipeline_complete.csv in any of these locations:\n" +
+            "\n".join(f"  - {p}" for p in possible_paths)
+        )
+        
+    except Exception as e:
+        raise RuntimeError(f"Failed to load local data: {str(e)}")
 
 
 # ================================================================
@@ -72,7 +133,7 @@ def initialize_engine():
     global engine
     
     if engine is None:
-        print("Initializing CoreTrendEngine...")
+        print("🔧 Initializing CoreTrendEngine...")
         engine = CoreTrendEngine()
         engine.load_models()
         print("✅ Engine initialized")
@@ -101,13 +162,19 @@ def generate_prediction(df):
         "date": str(latest_row["block_date"].date()),
         "regime": str(latest_row.get("regime_code", "UNKNOWN")),
         "eth_price": float(latest_row.get("eth_price", 0)),
+        "btc_price": float(latest_row.get("btc_price", 0)),
         "signal": {
             "action": signal.get("action", "NO_TRADE"),
             "direction": signal.get("direction"),
             "confidence": float(signal.get("adjusted_confidence", 0)),
             "position_size": float(signal.get("position_size", 0)),
+            "model_probability": float(signal.get("model_probability", 0)),
             "reasons": signal.get("reasons", []),
             "engine": signal.get("engine", "core_trend")
+        },
+        "metadata": {
+            "environment": "lambda" if is_lambda_environment() else "local",
+            "data_source": "s3" if (is_lambda_environment() and BOTO3_AVAILABLE) else "local_file"
         }
     }
 
@@ -120,12 +187,18 @@ def lambda_handler(event, context):
     """
     AWS Lambda entry point
     Works with API Gateway, Function URL, and direct invocation
+    Also works for local testing
     """
     try:
-        print("Lambda invocation started")
+        print("\n" + "="*70)
+        print("ETH WHALE ALPHA - PREDICTION")
+        print("="*70)
+        print(f"Environment: {'AWS Lambda' if is_lambda_environment() else 'Local Development'}")
+        print(f"boto3 available: {BOTO3_AVAILABLE}")
+        print("="*70)
         
-        # Load data from S3
-        df = load_data_from_s3()
+        # Load data (automatically chooses source)
+        df = load_data()
         
         # Generate prediction
         prediction = generate_prediction(df)
@@ -152,7 +225,7 @@ def lambda_handler(event, context):
                 "Access-Control-Allow-Origin": "*"
             },
             "body": json.dumps({
-                "error": "Data file not found in S3",
+                "error": "Data file not found",
                 "message": str(e),
                 "type": "FileNotFoundError"
             })
@@ -160,6 +233,9 @@ def lambda_handler(event, context):
     
     except Exception as e:
         print(f"❌ Error: {e}")
+        import traceback
+        traceback.print_exc()
+        
         return {
             "statusCode": 500,
             "headers": {
@@ -183,37 +259,43 @@ if __name__ == "__main__":
     Test locally before deploying
     """
     print("\n🧪 LOCAL TESTING MODE")
-    print("="*70)
     
     # Mock event and context
     test_event = {}
     test_context = None
     
-    # Override S3 bucket for local testing
-    os.environ['DATA_BUCKET'] = 'eth-whale-alpha-data'
-    os.environ['DATA_KEY'] = 'pipeline_complete.csv'
-    
     # Run handler
     response = lambda_handler(test_event, test_context)
     
     # Print result
-    print("\n📊 Response:")
-    print(json.dumps(response, indent=2))
+    print("\n" + "="*70)
+    print("RESPONSE")
+    print("="*70)
+    print(f"Status Code: {response['statusCode']}")
     
-    # Validate
     if response['statusCode'] == 200:
-        print("\n✅ Test passed!")
+        body = json.loads(response['body'])
+        print("\nPrediction:")
+        print(json.dumps(body, indent=2))
+        print("\n✅ Test PASSED!")
     else:
-        print("\n❌ Test failed!")
+        print("\nError:")
+        print(response['body'])
+        print("\n❌ Test FAILED!")
+
 
 # ================================================================
-# MONITORING
+# MONITORING (Lambda only)
 # ================================================================
 
 def log_metrics(prediction):
     """
     Optional: Send custom metrics to CloudWatch
+    Only works in Lambda environment
     """
+    if not is_lambda_environment() or not BOTO3_AVAILABLE:
+        return
+    
     try:
         cloudwatch = boto3.client('cloudwatch')
         
@@ -240,48 +322,3 @@ def log_metrics(prediction):
     except Exception as e:
         print(f"⚠️  Failed to log metrics: {e}")
         # Don't fail the request if metrics fail
-        
-
-# import pandas as pd
-# import json
-# from engines.core_trend_engine import CoreTrendEngine
-# from loader.pipeline import load_and_prepare_data
-
-# # Initialize engine once (Lambda container reuse)
-# engine = CoreTrendEngine.load_production()
-
-# def lambda_handler(event, context):
-#     """
-#     AWS Lambda entry point.
-#     Works with both API Gateway and Function URL.
-#     """
-#     try:
-#         # Load and prepare data
-#         df = load_and_prepare_data()
-        
-#         # Generate signal
-#         signal = engine.generate_daily_signal(df)
-        
-#         # Return properly formatted response
-#         return {
-#             "statusCode": 200,
-#             "headers": {
-#                 "Content-Type": "application/json",
-#                 "Access-Control-Allow-Origin": "*"
-#             },
-#             "body": json.dumps(signal)  # ✅ Already correct
-#         }
-    
-#     except Exception as e:
-#         # Error handling
-#         return {
-#             "statusCode": 500,
-#             "headers": {
-#                 "Content-Type": "application/json",
-#                 "Access-Control-Allow-Origin": "*"
-#             },
-#             "body": json.dumps({
-#                 "error": str(e),
-#                 "type": type(e).__name__
-#             })
-#         }
