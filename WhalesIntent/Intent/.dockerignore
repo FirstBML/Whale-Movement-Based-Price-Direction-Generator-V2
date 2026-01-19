@@ -34,7 +34,6 @@ logs/
 *.swo
 
 # Training artifacts
-training/
 notebooks/
 *.ipynb
 
