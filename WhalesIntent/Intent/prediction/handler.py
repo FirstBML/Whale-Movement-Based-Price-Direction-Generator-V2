@@ -7,7 +7,14 @@ import json
 import os
 import pandas as pd
 from engines.core_trend_engine import CoreTrendEngine
-
+# Only import training modules if running locally
+if not os.environ.get('AWS_EXECUTION_ENV', '').startswith('AWS_Lambda_'):
+    try:
+        from training.train_long_model import train_long_model
+        from training.train_short_model import train_short_model
+    except ImportError:
+        pass
+    
 # Try importing boto3 (only available in Lambda or if installed locally)
 try:
     import boto3

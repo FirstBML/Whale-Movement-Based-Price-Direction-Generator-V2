@@ -1,0 +1,1 @@
+{"statusCode": 500, "headers": {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}, "body": "{\"error\": \"Internal server error\", \"message\": \"No module named 'numpy._core'\", \"type\": \"ModuleNotFoundError\"}"}
